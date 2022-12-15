@@ -63,3 +63,22 @@ Open `a/nice/path/to/a.file` then edit it with your settings. You will need:
     $ yarn build
 ## Connect MongoDB
  -create a file named .env inside root folder and add your mongodb url inside a variable MONGO_URL
+ 
+###Docker Installation
+#Building your image
+ $docker build . -t <your username>/node-web-app
+  $docker images
+  ##Run the image
+  $docker run -p 49160:8080 -d <your username>/node-web-app
+  # Get container ID
+$ docker ps
+
+# Print app output
+$ docker logs <container id>
+
+# Example
+Running on http://localhost:8080
+  # Enter the container
+$ docker exec -it <container id> /bin/bash
+  
+  $ docker ps
