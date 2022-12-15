@@ -65,7 +65,8 @@ Open `a/nice/path/to/a.file` then edit it with your settings. You will need:
  -create a file named .env inside root folder and add your mongodb url inside a variable MONGO_URL
  
 ###Docker Installation
-#Building your image
+
+ #Building your image
        $docker build . -t <your username>/node-web-app
        $docker images
   ##Run the image
