@@ -91,7 +91,10 @@ router.put("comment/:id/", async (req, res) => {
 router.get("/:id", async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
-    res.status(200).json(post);
+    const userId = post.userId;
+    const likes = post.likes.length;
+    const comments = post.comments.length;
+    res.status(200).json({userId,likes,comments});
   } catch (err) {
     res.status(500).json(err);
   }

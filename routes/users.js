@@ -44,8 +44,12 @@ const router = require("express").Router();
 router.get("/:id", async (req, res) => {
     try {
       const user = await User.findById(req.params.id);
-      const { password, updatedAt,...other } = user._doc;
-      res.status(200).json(other);
+      const nooffollowers = user.followers.length;
+      const nooffollowings = user.followings.length;
+      const { username, password, updatedAt,...other } = user._doc;
+      
+       //const arr = {username,nooffollowers,nooffollowings};
+      res.status(200).json({username,nooffollowings,nooffollowers});
     } catch (err) {
       res.status(500).json(err);
     }
