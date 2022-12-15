@@ -66,19 +66,19 @@ Open `a/nice/path/to/a.file` then edit it with your settings. You will need:
  
 ###Docker Installation
 #Building your image
- $docker build . -t <your username>/node-web-app
-  $docker images
+       $docker build . -t <your username>/node-web-app
+       $docker images
   ##Run the image
-  $docker run -p 49160:8080 -d <your username>/node-web-app
+       $docker run -p 49160:8080 -d <your username>/node-web-app
   # Get container ID
-$ docker ps
+       $ docker ps
 
 # Print app output
-$ docker logs <container id>
+        $ docker logs <container id>
 
 # Example
 Running on http://localhost:8080
   # Enter the container
-$ docker exec -it <container id> /bin/bash
+      $ docker exec -it <container id> /bin/bash
   
-  $ docker ps
+      $ docker ps
