@@ -61,3 +61,5 @@ Open `a/nice/path/to/a.file` then edit it with your settings. You will need:
 ## Simple build for production
 
     $ yarn build
+## Connect MongoDB
+ -create a file named .env inside root folder and add your mongodb url inside a variable MONGO_URL
