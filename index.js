@@ -29,6 +29,8 @@ app.use("/api/users",userRoutes)
 app.use("/api/auth",authRoute)
 app.use("/api/posts", postRoute);
 
-app.listen(PORT,()=>{
+var server = app.listen(PORT,()=>{
     console.log("Backend server is running");
 })
+
+module.exports = server
