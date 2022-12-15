@@ -70,8 +70,11 @@ Open `a/nice/path/to/a.file` then edit it with your settings. You will need:
 
        $docker build . -t <your username>/node-web-app
        $docker images
-  ##Run the image
+       
+   #Run the image
+
        $docker run -p 49160:8080 -d <your username>/node-web-app
+       
   # Get container ID
        $ docker ps
 
