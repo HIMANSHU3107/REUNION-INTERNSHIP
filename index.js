@@ -7,6 +7,7 @@ const dotenv = require("dotenv");
 const userRoutes = require('./routes/users');
 const authRoute = require('./routes/auth');
 const postRoute = require("./routes/posts");
+const jwt = require("jsonwebtoken");
 
 const PORT = process.env.PORT || 8800;
 dotenv.config();

@@ -2,6 +2,7 @@ const router = require("express").Router();
 const Post = require("../models/Post");
 const User = require("../models/User");
 
+
 //create a post
 
 router.post("/", async (req, res) => {
@@ -15,7 +16,7 @@ router.post("/", async (req, res) => {
 });
 //update a post
 
-router.put("/:id", async (req, res) => {
+router.put("updatepost/:id", async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
     if (post.userId === req.body.userId) {

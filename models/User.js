@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const jwt = require("jsonwebtoken");
+const res = require("express/lib/response");
 
 const UserSchema = new mongoose.Schema(
   {
@@ -56,8 +58,26 @@ const UserSchema = new mongoose.Schema(
       type: Number,
       enum: [1, 2, 3],
     },
+    tokens: [{
+      token:{
+        type: String,
+      required: true
+      }
+    }]
   },
   { timestamps: true }
 );
+
+UserSchema.methods.generateAuthToken = async function(){
+   try{
+      const token = jwt.sign({_id:this._id.toString()},"mynameishimanshunareshbulaniabcd");
+      console.log(token);
+      this.tokens = this.tokens.concat({token:token})
+      return token;
+   }catch(error){
+res.send("the error part");
+console.log(error);
+   }
+}
 
 module.exports = mongoose.model("User", UserSchema);
